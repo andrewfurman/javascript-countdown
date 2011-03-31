@@ -1,0 +1,1 @@
+This is an extremely simple javascript countdown timer that anyone can easily modify to countdown to any date_time that they would like. The format of the date can also easily be modified. The countdown timer uses a recursive function with a setTimeout call to update the page once per second.
