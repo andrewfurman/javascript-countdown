@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script language="JavaScript" >
+			function startCountdown() {
+				document.write("<p id='countdown'></p>");
+				var countdownDate = new Date("6/17/2011 12:00 AM");//input desired date here
+				var currentDate = new Date();
+				var dateDifference = new Date(countdownDate-currentDate);
+				var seconds = dateDifference.valueOf()/1000;
+				CountBack(seconds);
+			}
+			function CountBack(seconds) {
+				var DisplayFormat = "DAYS Days, HOURS Hours, MINS Minutes, SECS Seconds.";
+  				DisplayFormat = DisplayFormat.replace("DAYS", (Math.floor(seconds/86400))%100000);
+  				DisplayFormat = DisplayFormat.replace("HOURS", (Math.floor(seconds/3600))%24);
+  				DisplayFormat = DisplayFormat.replace("MINS", (Math.floor(seconds/60))%60);
+  				DisplayFormat = DisplayFormat.replace("SECS", (Math.floor(seconds))%60);
+  				document.getElementById("countdown").innerHTML = DisplayFormat;
+				setTimeout("CountBack("+(seconds-1)+")", 1000);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Countdown until my birthday!</h1>
+		<script>startCountdown()</script> <!-- Insert this line where you would like to have the countdown appear. -->
+	</body>
+</html>
